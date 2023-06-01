@@ -1,0 +1,24 @@
+{
+  "name": "sasstest",
+  "version": "1.0.0",
+  "description": "testing",
+  "main": "index.js",
+  "scripts": {
+    "listen:sass": "node-sass sass/main.scss css/style.css -w",
+    "server": "live-server --browser=firefox",
+    "init": "npm-run-all --parallel server listen:sass",
+    "compiled:sass": "node-sass sass/main.scss css/style.compiled.css",
+    "concatenated:css": "concat vendors/font-awesome-4.7.0/css/font-awesome.css css/style.compiled.css -o css/style.concatenated.css",
+    "compressed:css": "node-sass css/style.concatenated.css css/style.css --output-style compressed",
+    "final-build:css": "npm-run-all compiled:sass  concatenated:css compressed:css"
+  },
+  "author": "Dorde Drazic",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "concat": "^1.0.3",
+    "node-sass": "^9.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^10.1.0"
+  }
+}
