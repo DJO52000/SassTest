@@ -7,7 +7,6 @@
     "listen:sass": "node-sass sass/main.scss css/style.css -w",
     "server": "live-server --browser=firefox",
     "init": "npm-run-all --parallel server listen:sass",
-    
     "concatenated:css": "concat vendors/font-awesome-4.7.0/css/all.css css/style.css -o css/style.concatenated.css",
     "compressed:css": "node-sass css/style.concatenated.css css/style.min.css --output-style compressed",
     "final-build:css": "npm-run-all concatenated:css compressed:css"
@@ -20,5 +19,8 @@
     "node-sass": "^9.0.0",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^10.1.0"
+  },
+  "dependencies": {
+    "postcss": "^8.4.24"
   }
 }
